@@ -1,11 +1,12 @@
 module.exports = {
   content: [
-    './pages/**/*.{html,js}',
-    './components/**/*.{html,js}',
+    './src/**/*.{html,js}',
   ],
   theme: {
     extend: {
       colors: {
+        "sol_primary": "#8246FF",
+        "sol_black": "#181C20"
       },
     },
   },
