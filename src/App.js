@@ -1,4 +1,4 @@
-import SideBar from "./components/SideBar";
+import Header from "./components/Header";
 import {
   BarChart,
   Bar,
@@ -34,18 +34,16 @@ function App() {
   );
 
   return (
-    <div className="App">
-      {/* <Header /> */}
-      <div>Hello world</div>
-      <div>
-        <SideBar />
-      </div>
-
+    <div className="bg-gradient-to-tr from-sol_black to-sol_primary h-screen">
+      <Header />
       {/* graphs */}
-      <div>{renderBarChart}</div>
+      <div className=" mx-10 sm:mx-40 md:mx-60 lg:mx-64 xl:mx-80 2xl:mx-96 2xl:px-20">
+        <ResponsiveContainer width="100%" height={500}>
+          {renderBarChart}
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
 
 export default App;
-
