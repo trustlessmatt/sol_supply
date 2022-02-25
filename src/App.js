@@ -4,9 +4,8 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 const data = [
@@ -26,22 +25,11 @@ const data = [
 
 function App() {
   const renderBarChart = (
-    <BarChart
-      width={500}
-      height={500}
-      data={data}
-      margin={{
-        top: 50,
-        right: 30,
-        left: 20,
-        bottom: 10,
-      }}
-    >
+    <BarChart data={data}>
       <Bar dataKey="amt" fill="#8884d8" />
       <XAxis dataKey="name" />
       <YAxis />
       <Tooltip />
-      <Legend />
     </BarChart>
   );
 
