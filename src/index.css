@@ -6,4 +6,8 @@
   .btn-primary {
     @apply bg-gray-300/20 text-white rounded-3xl text-xs py-1 px-3;
   }
+
+  .breakdown {
+    @apply bg-gradient-to-tr from-gray-400/20 to-gray-200/0 rounded-3xl py-6 mx-10 sm:mx-40 md:mx-60 lg:mx-64 xl:mx-80 2xl:mx-96 2xl:px-20;
+  }
 }
