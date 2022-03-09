@@ -55,17 +55,22 @@ function App() {
       <Header />
       <Profile />
 
-      {/* graphs */}
       {/* options on left, breakdown on right */}
-      <div>
+      <div className="border border-red-500 mx-10 ">
         <div>
-          options
+          <button
+            onClick={graphChangeHandler}
+            className="bg-white rounded-md text-black px-3 py-2"
+          >
+            Click Me
+          </button>
         </div>
-          <div className="breakdown">
-            <ResponsiveContainer width="100%" height={400}>
-              {renderBarChart}
-            </ResponsiveContainer>
-          </div>
+        {/* graphs */}
+        <div className="breakdown">
+          <ResponsiveContainer width="80%" height={300}>
+            {renderBarChart}
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );
