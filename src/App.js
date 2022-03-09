@@ -50,6 +50,11 @@ function App() {
     </BarChart>
   );
 
+  // refresh the DOM whenever graphData changes (log for debugging)
+  useEffect(() => {
+    console.log("graph data is: ", graphData);
+  }, [graphData]);
+
   return (
     <div className="bg-gradient-to-tr from-sol_black to-sol_primary h-screen overflow-y-auto">
       <Header />
