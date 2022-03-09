@@ -41,8 +41,20 @@ const data2 = [
 ];
 
 function App() {
+  const [graphData, setGraphData] = useState(data1);
+
+  // simple function that swaps between two static datasets
+  const graphChangeHandler = () => {
+    if (graphData === data1) {
+      setGraphData(data2);
+    } else {
+      setGraphData(data1);
+    }
+  };
+
+  // render method for bar chart (variable data source)
   const renderBarChart = (
-    <BarChart data={data}>
+    <BarChart data={graphData}>
       <Bar dataKey="amt" fill="#8884d8" />
       <XAxis dataKey="name" />
       <YAxis />
