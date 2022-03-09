@@ -9,7 +9,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
+// dummy data
+const data1 = [
   {
     name: "Held",
     amt: 700,
@@ -21,6 +22,21 @@ const data = [
   {
     name: "Burned",
     amt: 100,
+  },
+];
+
+const data2 = [
+  {
+    name: "Held",
+    amt: 20,
+  },
+  {
+    name: "Staked",
+    amt: 900,
+  },
+  {
+    name: "Burned",
+    amt: 80,
   },
 ];
 
