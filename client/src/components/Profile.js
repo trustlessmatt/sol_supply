@@ -19,12 +19,31 @@ const Profile = () => {
             {/* name, desc, links */}
             <div className="px-4 w-[500px] h-64">
               <p className="font-bold text-[40px] text-gray-200">DeGods</p>
-              <div className=" h-40 overflow-auto">
+              <div className=" h-28 overflow-auto">
                 <p className="text-gray-200">
                   A deflationary collection of degenerates, punks, and misfits.
                   Gods of the metaverse and masters of our own universe.
-                  Integrating with Dust Protocol soon.
+                  Integrating with Dust Protocol soon. A deflationary collection
+                  of degenerates, punks, and misfits. Gods of the metaverse and
+                  masters of our own universe. Integrating with Dust Protocol
+                  soon. A deflationary collection of degenerates, punks, and
+                  misfits. Gods of the metaverse and masters of our own
+                  universe. Integrating with Dust Protocol soon. A deflationary
+                  collection of degenerates, punks, and misfits. Gods of the
+                  metaverse and masters of our own universe. Integrating with
+                  Dust Protocol soon. A deflationary collection of degenerates,
+                  punks, and misfits. Gods of the metaverse and masters of our
+                  own universe. Integrating with Dust Protocol soon.
                 </p>
+              </div>
+              {/* links below */}
+              <div className="ml-auto flex mx-24 my-2 space-x-3">
+                <div className="btn-primary">
+                  Website <ExternalLink />
+                </div>
+                <button className="btn-primary">Rarity</button>
+                <button className="btn-primary">Community</button>
+                <button className="btn-primary">Whitepaper</button>
               </div>
             </div>
           </div>
@@ -42,16 +61,6 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* links below */}
-      <div className="flex mx-24 my-2 space-x-3">
-        <div className="btn-primary">
-          Website <ExternalLink />
-        </div>
-        <button className="btn-primary">Rarity</button>
-        <button className="btn-primary">Community</button>
-        <button className="btn-primary">Whitepaper</button>
       </div>
     </div>
   );
