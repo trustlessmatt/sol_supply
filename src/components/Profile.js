@@ -1,6 +1,24 @@
+import { useState, useEffect } from 'react';
 import ExternalLink from "./assets/ExternalLink";
 
 const Profile = () => {
+
+  const [pctChange, setPctChange] = useState(66);
+  const [isPositive, setIsPositive] = useState(true);
+
+  // function to assess value of % change and update bg color
+  const pctChangeHandler = () => {
+    if (pctChange < 0) {
+      setIsPositive(false);
+    } else {
+      setIsPositive(true);
+    }
+  }
+
+  useEffect(() => {
+    pctChangeHandler();
+  });
+
   return (
     <div>
       <div className="flex mx-24 mb-4 pt-5 px-5">
@@ -34,11 +52,11 @@ const Profile = () => {
           {/* price action */}
           <p className="text-right text-gray-200 ">floor price</p>
           <p className="text-right text-gray-200 font-bold text-3xl">
-            33.3 SOL
+            50 SOL
           </p>
           <div>
-            <div className="ml-auto mt-1 text-center w-min px-3 py-1 text-sm bg-green-500 rounded-xl text-white">
-              18.2%
+            <div className={"ml-auto mt-1 text-center w-min px-3 py-1 text-sm rounded-xl text-white " + (isPositive ? 'bg-green-500' : 'bg-red-500')}>
+              {pctChange + '%'}
             </div>
           </div>
         </div>
