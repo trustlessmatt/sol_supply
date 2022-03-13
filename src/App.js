@@ -90,21 +90,25 @@ function App() {
             id="1"
             title="MINTED"
             description="All NFTs minted at the collection's genesis date."
+            active={true}
           />
           <ChartOptions
             id="2"
             title="STAKED"
             description="All NFTs currently staked with known staking mechanisms."
+            active={false}
           />
           <ChartOptions
             id="3"
             title="BURNED"
             description="All NFTs removed from total supply via burning mechanisms."
+            active={false}
           />
           <ChartOptions
             id="4"
             title="HELD"
             description="All NFTs held in wallets."
+            active={false}
           />
         </div>
         {/* chart on right */}
