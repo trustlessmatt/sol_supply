@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
+import ChartOptions from "./components/ChartOptions";
 import {
   BarChart,
   Bar,
@@ -55,11 +56,20 @@ function App() {
 
   // render method for bar chart (variable data source)
   const renderBarChart = (
-    <BarChart data={graphData}>
+    <BarChart
+      width={600}
+      height={300}
+      data={graphData}
+      margin={{
+        top: 20,
+        right: 60,
+        left: 30,
+        bottom: 5,
+      }}
+    >
       <Bar dataKey="amt" fill="#8884d8" />
       <XAxis dataKey="name" />
       <YAxis />
-      <Tooltip />
     </BarChart>
   );
 
@@ -73,22 +83,32 @@ function App() {
       <Header />
       <Profile />
 
-      {/* options on left, breakdown on right */}
-      <div className="border border-red-500 mx-10 ">
-        <div>
-          <button
-            onClick={graphChangeHandler}
-            className="bg-white rounded-md text-black px-3 py-2"
-          >
-            Click Me
-          </button>
+      <div className="flex items-center py-4">
+        {/* options on left */}
+        <div className="mx-12 block">
+          <ChartOptions
+            id="1"
+            title="MINTED"
+            description="All NFTs minted at the collection's genesis date."
+          />
+          <ChartOptions
+            id="2"
+            title="STAKED"
+            description="All NFTs currently staked with known staking mechanisms."
+          />
+          <ChartOptions
+            id="3"
+            title="BURNED"
+            description="All NFTs removed from total supply via burning mechanisms."
+          />
+          <ChartOptions
+            id="4"
+            title="HELD"
+            description="All NFTs held in wallets."
+          />
         </div>
-        {/* graphs */}
-        <div className="breakdown">
-          <ResponsiveContainer width="80%" height={300}>
-            {renderBarChart}
-          </ResponsiveContainer>
-        </div>
+        {/* chart on right */}
+        <div className="breakdown ml-auto">{renderBarChart}</div>
       </div>
     </div>
   );
