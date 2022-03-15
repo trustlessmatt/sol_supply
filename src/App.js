@@ -312,7 +312,7 @@ function App() {
   useEffect(() => {
     // fetch data function
     const fetchProfile = async () => {
-      const response = await axios.get("https://api-mainnet.magiceden.dev/v2/collections/degods");
+      const response = await axios.get(apiURL);
       setProjectData(response.data); 
       console.log(response.data);
     }
