@@ -355,7 +355,7 @@ function App() {
           />
         </div>
         {/* chart on right */}
-        <div className="breakdown ml-auto w-[800px] h-[400px]">{MyResponsiveBar}</div>
+        {/* <div className="breakdown ml-auto w-[800px] h-[400px]"><MyResponsiveBar /></div> */}
       </div>
     </div>
   );
