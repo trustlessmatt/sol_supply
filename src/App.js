@@ -8,6 +8,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import axios from "axios";
 
 import { ResponsiveBar } from '@nivo/bar';
 
@@ -150,10 +151,11 @@ const data3 = [
   }
 ]
 
-
+const apiURL = "https://api-mainnet.magiceden.dev/v2/collections/degods";
 
 function App() {
   const [graphData, setGraphData] = useState(data1);
+  const [projectData, setProjectData] = useState(null);
 
   // simple function that swaps between two static datasets
   const graphChangeHandler = () => {
@@ -306,6 +308,18 @@ function App() {
   useEffect(() => {
     console.log("graph data is: ", graphData);
   }, [graphData]);
+
+  useEffect(() => {
+    // fetch data function
+    const fetchProfile = async () => {
+      const response = await axios.get("https://api-mainnet.magiceden.dev/v2/collections/degods");
+      setProjectData(response.data); 
+      console.log(response.data);
+    }
+
+    fetchProfile();
+    
+  },[]);
 
   return (
     <div className="bg-gradient-to-tr from-sol_black to-sol_primary h-screen overflow-y-auto">
