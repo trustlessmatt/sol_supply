@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 import axios from "axios";
-
+import DEFAULTS from "./globals";
 
 // dummy data
 const data1 = [
@@ -41,8 +41,6 @@ const data2 = [
     amt: 80,
   },
 ];
-
-const apiURL = "https://api-mainnet.magiceden.dev/v2/collections/degods";
 
 function App() {
   const [graphData, setGraphData] = useState(data1);
@@ -84,7 +82,7 @@ function App() {
   useEffect(() => {
     // fetch data function
     const fetchProfile = async () => {
-      const response = await axios.get(apiURL);
+      const response = await axios.get(DEFAULTS.API);
       setProjectData(response.data); 
       console.log(response.data);
     }
